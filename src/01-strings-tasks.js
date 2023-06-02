@@ -69,7 +69,7 @@ function extractNameFromTemplate(value) {
   const arr = value.split(' ');
   const newArr = [];
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     const temp = arr[i].replace(/(?!-)[^A-Za-z.]/g, '');
     newArr.push(temp);
   }
@@ -255,21 +255,18 @@ function encodeToRot13(str) {
   const code = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
 
 
-   const arr = str.split('');
-   console.log(arr);
+  const arr = str.split('');
   const newArr = arr.map((el) => {
-   if (el===' ') {
-    return " ";
-   }
-    if (el==='?' ||el==='!') {
+    if (el === ' ') {
+      return ' ';
+    }
+    if (el === '?' || el === '!') {
       return el;
-   } else {
-  return dictionary[code.indexOf(el)]
-}
-})
+    }
+    return dictionary[code.indexOf(el)];
+  });
 
-return newArr.join("");
-
+  return newArr.join('');
 }
 /**
  * Returns true if the value is string; otherwise false.
