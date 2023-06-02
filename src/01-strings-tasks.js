@@ -107,7 +107,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
   const str = value.trim();
   const arr = str.split(' ');
   const newArr = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     const temp = arr[i].replace(/(-)[^A-Za-z.]/g, '');
     newArr.push(temp);
   }
