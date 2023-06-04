@@ -247,7 +247,6 @@ function toNumber(value, def) {
   } else {
     result = number;
   }
-
   return result;
 }
 
