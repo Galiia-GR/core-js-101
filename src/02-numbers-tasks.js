@@ -240,12 +240,12 @@ function isPrime(number) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  const num = parseInt(value, 10);
+  const number = parseInt(value, 10);
   let result = 0;
-  if (Number.isNaN(num)) {
+  if (Number.isNaN(number)) {
     result = def;
   } else {
-    result = num;
+    result = number;
   }
 
   return result;
