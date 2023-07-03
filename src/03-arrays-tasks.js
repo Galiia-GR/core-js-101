@@ -270,12 +270,8 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  const newArr = arr.map((item, index) => {
-    return Array(index + 1).fill(item);
-  });
-  const newReduce = newArr.reduce((acc, curr) => {
-    return acc.concat(curr);
-  }, []);
+  const newArr = arr.map((item, index) => Array(index + 1).fill(item));
+  const newReduce = newArr.reduce((acc, curr) => acc.concat(curr), []);
   return newReduce;
 }
 
@@ -310,9 +306,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  const newArr = arr.filter((num) => {
-    return typeof num === 'number' && num > 0;
-  });
+  const newArr = arr.filter((num) => typeof num === 'number' && num > 0);
   return newArr.length;
 }
 
